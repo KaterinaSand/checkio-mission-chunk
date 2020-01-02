@@ -1,20 +1,24 @@
 <!-- Describe task in general -->
 
 <p>
-    Sum two passed ints
+    <i>You have a lot of work to do, and you want to split this work on smaller pieces, so you will know on which piece you will do on Monday, which will be for Tuesday and so on. </i>
+</p>
+
+<p>
+    Spit an array to an array os smaller arrays with the same size (chunks). The last chunk can be smaller than default chunk-size. If array is empty then you should not have chunks at all.
 </p>
 
 <p style="text-align: center;">
-    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 83px"/>
+    <img  title="example" src="{{MEDIA}}example.png" alt="example" style="max-height: 300px"/>
 </p>
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Input: </strong> Two arguments. Both are ints.
+    <strong>Input: </strong> Two arguments. {% if interpreter.slug == "js-node" %}Array{% else %}Iterable{% endif %} and chunk size.
 </p>
 
 <p>
-    <strong>Output: </strong> Int. 
+    <strong>Output: </strong> {% if interpreter.slug == "js-node" %}Array{% else %}Iterable{% endif %} with chunked {% if interpreter.slug == "js-node" %}Array{% else %}Iterable{% endif %}. 
 </p>
 
 
@@ -25,12 +29,12 @@
     </p>
 
 {% if interpreter.slug == "js-node" %}
-<pre class="brush: javascript">sumTwo(2, 3) == 5
-sumTwo(5, 7) == 12
+<pre class="brush: javascript">chunkingBy([5, 4, 7, 3, 4, 5, 4], 3) == [[5, 4, 7], [3, 4, 5], [4]]
+chunkingBy([3, 4, 5], 1) == [[3], [4], [5]]
 </pre>
 {% else %}
-<pre class="brush: python">sum_two(2, 3) == 5
-sum_two(5, 7) == 12
+<pre class="brush: python">chunking_by([5, 4, 7, 3, 4, 5, 4], 3) == [[5, 4, 7], [3, 4, 5], [4]]
+chunking_by([3, 4, 5], 1) == [[3], [4], [5]]
 </pre>
 {% endif %}
 </div>
@@ -38,15 +42,10 @@ sum_two(5, 7) == 12
 
 <!-- Here you can explain how it can be used in development -->
 <!-- The section is optional -->
-<p class="for_info_only">
-
-    <strong>How it’s used: </strong>
-    <i>(math is used everywhere)</i>
-</p>
 
 <!-- Here you can explain some constraints for input-->
 <!-- The section is optional -->
 <p>
     <strong>Precondition:</strong>
-    <i>both given ints should be between -1000 and 1000</i>
+    <i>chunk-size > 0</i>
 </p>

@@ -1,19 +1,23 @@
 "use strict";
 
-function sumTwo(a, b) {
-    // sums two passed arguments
-
+function chunkingBy(a, b) {
     // your code here
-    return 0;
+    return undefined;
 }
 
 var assert = require('assert');
+
 if (!global.is_checking) {
     console.log('Example:');
-    console.log(sumTwo(3, 2));
+    console.log(chunkingBy([5, 4, 7, 3, 4, 5, 4], 3));
 
-    // These "asserts" are used for self-checking and not for an auto-testing
-    assert.equal(sumTwo(3, 2), 5);
-    assert.equal(sumTwo(5, 7), 12);
+    // These "asserts" are used for self-checking
+    assert.deepEqual(chunkingBy([5, 4, 7, 3, 4, 5, 4], 3), [[5, 4, 7], [3, 4, 5], [4]]);
+    assert.deepEqual(chunkingBy([3, 4, 5], 1), [[3], [4], [5]]);
+    assert.deepEqual(chunkingBy([5, 4], 7), [[5, 4]]);
+    assert.deepEqual(chunkingBy([], 3), []);
+    assert.deepEqual(chunkingBy([4, 4, 4, 4], 4), [[4, 4, 4, 4]]);
+
     console.log("Coding complete? Click 'Check' to earn cool rewards!");
 }
+    
