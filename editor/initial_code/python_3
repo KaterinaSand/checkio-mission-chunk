@@ -1,3 +1,6 @@
+from typing import Iterable
+
+
 def chunking_by(items: list, size: int) -> Iterable:
     # your code here
     return items
