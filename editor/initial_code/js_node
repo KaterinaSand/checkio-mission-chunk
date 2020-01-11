@@ -1,8 +1,8 @@
 "use strict";
 
-function chunkingBy(a, b) {
+function chunkingBy(items, size) {
     // your code here
-    return undefined;
+    return items;
 }
 
 var assert = require('assert');
