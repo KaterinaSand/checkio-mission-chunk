@@ -5,7 +5,7 @@
 </p>
 
 <p>
-    Spit a {% if interpreter.slug == "js-node" %}array{% else %}list{% endif %} into smaller {% if interpreter.slug == "js-node" %}arrays{% else %}lists{% endif %} of the same size (chunks). The last chunk can be smaller than the default chunk-size. If the {% if interpreter.slug == "js-node" %}array{% else %}list{% endif %} is empty, then you shouldn't have any chunks at all.
+    Spit {% if interpreter.slug == "js-node" %}an array{% else %}a list{% endif %} into smaller {% if interpreter.slug == "js-node" %}arrays{% else %}lists{% endif %} of the same size (chunks). The last chunk can be smaller than the default chunk-size. If the {% if interpreter.slug == "js-node" %}array{% else %}list{% endif %} is empty, then you shouldn't have any chunks at all.
 </p>
 
 <p style="text-align: center;">
@@ -14,7 +14,7 @@
 
 <!-- Explain input and output values -->
 <p>
-    <strong>Input: </strong> Two arguments. A {% if interpreter.slug == "js-node" %}Array{% else %}List{% endif %} and chunk size.
+    <strong>Input: </strong> Two arguments. {% if interpreter.slug == "js-node" %}An Array{% else %}A List{% endif %} and chunk size.
 </p>
 
 <p>
